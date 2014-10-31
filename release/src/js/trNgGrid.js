@@ -941,7 +941,7 @@ var TrNgGrid;
 
             return {
                 restrict: 'A',
-                require: '^' + tableDirective,
+                require: '^?' + tableDirective,
                 scope: true,
                 compile: function (templateElement, tAttrs) {
                     var isCustomized = tAttrs['isCustomized'] == 'true';
@@ -993,7 +993,7 @@ var TrNgGrid;
         function () {
             return {
                 restrict: 'A',
-                require: '^' + tableDirective,
+                require: '^?' + tableDirective,
                 scope: true,
                 compile: function (templateElement, tAttrs) {
                     return {
@@ -1010,7 +1010,7 @@ var TrNgGrid;
         function () {
             return {
                 restrict: 'A',
-                require: '^' + tableDirective,
+                require: '^?' + tableDirective,
                 scope: true,
                 compile: function (templateElement, tAttrs) {
                     var isCustomized = tAttrs['isCustomized'] == 'true';
@@ -1039,7 +1039,7 @@ var TrNgGrid;
         function () {
             return {
                 restrict: 'A',
-                require: '^' + tableDirective,
+                require: '^?' + tableDirective,
                 scope: true,
                 compile: function (templateElement, tAttrs) {
                     var isCustomized = tAttrs['isCustomized'] == 'true';
@@ -1176,7 +1176,7 @@ var TrNgGrid;
             return {
                 restrict: 'A',
                 scope: true,
-                require: '^' + tableDirective,
+                require: '^?' + tableDirective,
                 templateUrl: TrNgGrid.footerPagerTemplateId,
                 replace: true,
                 compile: function (templateElement, tAttrs) {
