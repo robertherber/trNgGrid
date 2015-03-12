@@ -958,20 +958,24 @@ var TrNgGrid;
                             var columnOptions = angular.extend(scope.gridOptions.gridColumnDefs[columnIndex], TrNgGrid.defaultColumnOptions);
 
                             // now match and observe the attributes
-                            controller.linkAttrs(tAttrs, columnOptions);
+                            if(controller){
+                                controller.linkAttrs(tAttrs, columnOptions);
+                            }
 
                             // set up the new scope
                             scope.columnOptions = columnOptions;
                             scope.isCustomized = isCustomized;
                             scope.toggleSorting = function (propertyName) {
-                                controller.toggleSorting(propertyName);
+                                if(controller){
+                                    controller.toggleSorting(propertyName);
+                                }
                             };
 
                             // set up the column title
                             setupColumnTitle(scope);
 
                             scope.$watch("columnOptions.filter", function (newValue, oldValue) {
-                                if (newValue !== oldValue) {
+                                if (newValue !== oldValue && controller) {
                                     controller.setFilter(columnOptions.fieldName, newValue);
                                 }
                             });
